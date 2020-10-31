@@ -30,13 +30,13 @@ router.post('/admin/products/new', requireAuth, upload.single('image'), [require
     res.redirect('/admin/products');
 });
 
-router.get('/admin/products/:id/edit', async (req, res) => {
+router.get('/admin/products/:id/edit', requireAuth, async (req, res) => {
   const product = await productsRepo.getOne(req.params.id);
   if (!product) {
     return res.send('Product not found');
   }
 
-  res.send(productsEditTemplate({ products }));
+  res.send(productsEditTemplate({ product }));
 });
 
 router.post('/admin/products/:id/edit', 

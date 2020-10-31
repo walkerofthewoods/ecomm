@@ -1,6 +1,6 @@
 const express = require('express');
-const { check, validationResult } = require('express-validator');
 
+const { handleErrors } = require('./middlewares');
 const usersRepo = require('../../repositories/users');
 const signupTemplate = require('../../views/admin/auth/signup');
 const signinTemplate = require('../../views/admin/auth/signin');
@@ -18,24 +18,18 @@ router.get('/signup', (req, res) => {
 	res.send(signupTemplate({ req }));
 });
 
-router.post('/signup', [ requireEmail, requirePassword, requirePasswordConfirmation ], async (req, res) => {
-	const errors = validationResult(req);
+router.post('/signup', [ requireEmail, requirePassword, requirePasswordConfirmation ], 
+	handleErrors(signupTemplate), 
+	async (req, res) => {
+		const { email, password } = req.body;
 
-	console.log(errors);
+		// create a user in our repo
+		const user = await usersRepo.create({ email, password });
 
-  if (!errors.isEmpty()) {
-    return res.send(signupTemplate({ req, errors }));
-  }
+		// store the id of that user in the users cookie
+		req.session.userId = user.id;
 
-	const { email, password, passwordConfirmation } = req.body;
-
-	// create a user in our repo
-	const user = await usersRepo.create({ email, password });
-
-	// store the id of that user in the users cookie
-	req.session.userId = user.id;
-
-	res.send('Account created!!!');
+		res.redirect('/admin/products');
 });
 
 router.get('/signout', (req, res) => {
@@ -47,23 +41,17 @@ router.get('/signin', (req, res) => {
 	res.send(signinTemplate({}));
 });
 
-router.post('/signin', [
-	requireEmailExists, 
-	requireValidPasswordForUser 
-], async (req, res) => {
-	const errors = validationResult(req);
-
-	if (!errors.isEmpty()) {
-		return res.send(signinTemplate({errors}));
-	}
-
+router.post('/signin', 
+[requireEmailExists, requireValidPasswordForUser], 
+handleErrors(signinTemplate),
+async (req, res) => {
 	const { email } = req.body;
 
 	const user = await usersRepo.getOneBy({ email });
 
 	req.session.userId = user.id;
 
-	res.send('You are now signed in');
+	res.redirect('/admin/products');
 });
 
 module.exports = router;

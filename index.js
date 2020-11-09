@@ -1,3 +1,4 @@
+const PORT = process.env.PORT || 3000;
 const express = require('express');
 const bodyParser = require('body-parser');
 const cookieSession = require('cookie-session');
@@ -20,6 +21,6 @@ app.use(productsRouter);
 app.use(adminProductsRouter);
 app.use(cartsRouter);
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log('Listening...');
 });

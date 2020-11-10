@@ -1,5 +1,6 @@
 const layout = require('../layout');
 
+// delete button 'disabled' below for live demo purposes
 module.exports = ({ products }) => {
 	const renderedProducts = products
 		.map((product) => {
@@ -16,9 +17,9 @@ module.exports = ({ products }) => {
         </td>
         <td>
           <form method="POST" action="/admin/products/${product.id}/delete">
-          <button class="button is-danger">Delete</button>
+          <!-- <button class="button is-danger">Delete</button> -->
+          <button class="button is-danger" disabled>Disabled</button>
           </form>
-        </td>
       </tr>
     `;
 		})

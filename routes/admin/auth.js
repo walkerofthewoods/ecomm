@@ -34,14 +34,15 @@ router.post('/signup', [ requireEmail, requirePassword, requirePasswordConfirmat
 
 router.get('/signout', (req, res) => {
 	req.session = null;
-	res.send('You are now logged out');
+	res.redirect('/');
 });
 
 router.get('/signin', (req, res) => {
 	res.send(signinTemplate({}));
 });
 
-router.post('/signin', 
+// functional signin below, commented out for live demo purposes
+/* router.post('/signin', 
 [requireEmailExists, requireValidPasswordForUser], 
 handleErrors(signinTemplate),
 async (req, res) => {
@@ -50,6 +51,13 @@ async (req, res) => {
 	const user = await usersRepo.getOneBy({ email });
 
 	req.session.userId = user.id;
+
+	res.redirect('/admin/products');
+}); */
+
+router.post('/signin', 
+(req, res) => {
+	req.session.userId = "4686416f";
 
 	res.redirect('/admin/products');
 });

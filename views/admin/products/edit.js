@@ -1,6 +1,7 @@
 const layout = require('../layout');
 const { getError } = require('../../helpers');
 
+// button disabled below for live demo purposes
 module.exports = ({ product, errors }) => {
 	return layout({
 		content: `
@@ -26,7 +27,8 @@ module.exports = ({ product, errors }) => {
               <input type="file" name="image" />
             </div>
             <br />
-            <button class="button is-primary">Edit</button>
+            <button class="button is-primary" disabled>Edit</button>
+            <p style="color:red">Disabled for demo</p>
           </form>
         </div>
       </div>

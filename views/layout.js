@@ -19,20 +19,20 @@ module.exports = ({ content }) => {
               <div>
                 <ul class="social">
                   <li>
-                    <a href=""><i class="fa fa-phone"></i>+1 555 987 6543</a>
+                    <a href="https://walkerofthewoods.github.io/"><i class="fa fa-phone"></i>+1 555 123 4567</a>
                   </li>
                   <li>
-                    <a href=""><i class="fa fa-envelope"></i> shop@myshop.com</a>
+                    <a href="https://walkerofthewoods.github.io/"><i class="fa fa-envelope"></i> shop@example.com</a>
                   </li>
                 </ul>
               </div>
               <div>
                 <ul class="social">
-                  <li><a href=""><i class="fab fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                  <li><a href=""><i class="fab fa-linkedin"></i></a></li>
-                  <li><a href=""><i class="fab fa-dribbble"></i></a></li>
-                  <li><a href=""><i class="fab fa-google-plus"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-dribbble"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-google-plus"></i></a></li>
                 </ul>
               </div>
             </div>

@@ -7,6 +7,7 @@ module.exports = ({ products }) => {
 			return `
       <tr>
         <td>${product.title}</td>
+        <td><img style="height:70px" src="data:image/png;base64, ${product.image}"/></td>
         <td>${product.price}</td>
         <td>
           <a href="/admin/products/${product.id}/edit">
@@ -35,6 +36,7 @@ module.exports = ({ products }) => {
         <thead>
           <tr>
             <th>Title</th>
+            <th>Image</th>
             <th>Price</th>
             <th>Edit</th>
             <th>Delete</th>

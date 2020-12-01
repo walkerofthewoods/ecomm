@@ -1,7 +1,7 @@
 const layout = require('../layout');
 const { getError } = require('../../helpers');
 
-// innput fields below no longer 'required' for live demo purposes
+// input fields below no longer 'required' for live demo purposes
 module.exports = ({ errors }) => {
   return layout({
     content: `

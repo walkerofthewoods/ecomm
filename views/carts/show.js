@@ -2,7 +2,7 @@ const layout = require('../layout');
 
 module.exports = ({ items }) => {
 	let totalPrice = 0;
-	let totalItems = 0;
+	totalItems = 0;
 	for (let item of items) {
 		totalPrice += item.quantity * item.product.price;
 		totalItems += item.quantity;
@@ -38,8 +38,9 @@ module.exports = ({ items }) => {
 		})
 		.join('');
 
-	return layout({
-		content: `
+	return layout(
+		{
+			content: `
       <div id="cart" class="container">
         <div class="columns">
           <div class="column"></div>
@@ -60,5 +61,7 @@ module.exports = ({ items }) => {
         </div>
       </div>
     `
-	});
+		},
+		totalItems
+	);
 };

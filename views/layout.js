@@ -1,27 +1,6 @@
 const cartsRepo = require('../repositories/carts');
 
-module.exports = ({ content }) => {
-	/* 
-  
-  what is req.session?  not defined here.
-  
-  console.log(req.session);
-
-	async function greet() {
-		if (!req.session.cartId) {
-			console.log('cart empty');
-			// display cart(0)
-		} else {
-			const cart = await cartsRepo.getOne(req.session.cartId);
-
-			let totalItems = 0;
-			for (let item of cart.items) {
-				totalItems += cart.items.quantity;
-			}
-			console.log('Cart has ', totalItems, ' items.');
-		}
-	}
-	greet(); */
+module.exports = ({ content }, totalItems) => {
 
 	return `
     <!DOCTYPE html>
@@ -76,7 +55,7 @@ module.exports = ({ content }) => {
                     <a href="/"><i class="fa fa-home"></i> Home</a>
                   </div>
                   <div class="navbar-item">
-                    <a href="/cart"><i class="fa fa-shopping-cart"></i> Cart</a>
+                    <a href="/cart"><i class="fa fa-shopping-cart"></i> Cart (${totalItems})</a>
                   </div>
                 </div>
               </div>

@@ -1,7 +1,5 @@
 const layout = require('../layout');
 
-let dummy = 0;
-
 module.exports = ({ items }) => {
 	let totalPrice = 0;
 	let totalItems = 0;

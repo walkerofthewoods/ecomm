@@ -3,8 +3,8 @@ const { getError } = require('../../helpers');
 
 // input fields below no longer 'required' for live demo purposes
 module.exports = ({ errors }) => {
-  return layout({
-    content: `
+	return layout({
+		content: `
       <div class="container">
         <div class="columns is-centered">
           <div class="column is-one-third">
@@ -30,5 +30,5 @@ module.exports = ({ errors }) => {
         </div>
       </div>
     `
-  });
+	});
 };

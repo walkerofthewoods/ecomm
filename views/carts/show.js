@@ -1,22 +1,25 @@
 const layout = require('../layout');
 
-module.exports = ({ items }) => { 
+let dummy = 0;
 
-let totalPrice = 0;
-let totalItems = 0;
-for (let item of items) {
-  totalPrice += item.quantity * item.product.price;
-  totalItems += item.quantity;
-}
+module.exports = ({ items }) => {
+	let totalPrice = 0;
+	let totalItems = 0;
+	for (let item of items) {
+		totalPrice += item.quantity * item.product.price;
+		totalItems += item.quantity;
+	}
 
-  const renderedItems = items
-    .map(item => {
-      return `
+	const renderedItems = items
+		.map((item) => {
+			return `
         <div class="cart-item message">
-          <h3 class="subtitle"><img style="height:70px" src="data:image/png;base64, ${item.product.image}"/> ${item.product.title} </h3>
+          <h3 class="subtitle"><img style="height:70px" src="data:image/png;base64, ${item.product.image}"/> ${item
+				.product.title} </h3>
           <div class="cart-right">
             <div>
-              $${item.product.price}  X <input type="number" min="0" max="99" style="width:40px" value="${item.quantity}"></input> = 
+              $${item.product
+					.price}  X <input type="number" min="0" max="99" style="width:40px" value="${item.quantity}"></input>
             </div>
             <div class="price is-size-4">
               $${item.product.price * item.quantity}
@@ -34,11 +37,11 @@ for (let item of items) {
           </div>
         </div>
       `;
-    })
-    .join('');
+		})
+		.join('');
 
-  return layout({
-    content: `
+	return layout({
+		content: `
       <div id="cart" class="container">
         <div class="columns">
           <div class="column"></div>
@@ -59,5 +62,5 @@ for (let item of items) {
         </div>
       </div>
     `
-  });
+	});
 };

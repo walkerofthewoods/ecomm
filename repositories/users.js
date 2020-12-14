@@ -1,6 +1,5 @@
-const fs = require('fs');
+/* eslint-disable linebreak-style */
 const crypto = require('crypto');
-const { report } = require('process');
 const util = require('util');
 const Repository = require('./repository');
 

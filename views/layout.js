@@ -1,8 +1,7 @@
 const cartsRepo = require('../repositories/carts');
 
 module.exports = ({ content }) => {
-
-  /* 
+	/* 
   
   what is req.session?  not defined here.
   
@@ -56,7 +55,6 @@ module.exports = ({ content }) => {
                   <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-facebook"></i></a></li>
                   <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-twitter"></i></a></li>
                   <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-linkedin"></i></a></li>
-                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-dribbble"></i></a></li>
                   <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-google-plus"></i></a></li>
                 </ul>
               </div>

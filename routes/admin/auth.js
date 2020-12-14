@@ -4,11 +4,12 @@ const { handleErrors } = require('./middlewares');
 const usersRepo = require('../../repositories/users');
 const signupTemplate = require('../../views/admin/auth/signup');
 const signinTemplate = require('../../views/admin/auth/signin');
-const { requireEmail, 
-				requirePassword, 
-				requirePasswordConfirmation, 
-				requireEmailExists, 
-				requireValidPasswordForUser 
+const {
+	requireEmail,
+	requirePassword,
+	requirePasswordConfirmation,
+	requireEmailExists,
+	requireValidPasswordForUser
 } = require('./validators');
 
 const router = express.Router();
@@ -18,8 +19,10 @@ router.get('/signup', (req, res) => {
 	res.send(signupTemplate({ req }));
 });
 
-router.post('/signup', [ requireEmail, requirePassword, requirePasswordConfirmation ], 
-	handleErrors(signupTemplate), 
+router.post(
+	'/signup',
+	[ requireEmail, requirePassword, requirePasswordConfirmation ],
+	handleErrors(signupTemplate),
 	async (req, res) => {
 		const { email, password } = req.body;
 
@@ -30,7 +33,8 @@ router.post('/signup', [ requireEmail, requirePassword, requirePasswordConfirmat
 		req.session.userId = user.id;
 
 		res.redirect('/admin/products');
-});
+	}
+);
 
 router.get('/signout', (req, res) => {
 	req.session = null;
@@ -55,9 +59,8 @@ async (req, res) => {
 	res.redirect('/admin/products');
 }); */
 
-router.post('/signin', 
-(req, res) => {
-	req.session.userId = "4686416f";
+router.post('/signin', (req, res) => {
+	req.session.userId = '4686416f';
 
 	res.redirect('/admin/products');
 });

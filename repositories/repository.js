@@ -1,8 +1,9 @@
+/* eslint-disable linebreak-style */
 const fs = require('fs');
 const crypto = require('crypto');
 
 module.exports = class Repository {
-  constructor(filename) {
+	constructor(filename) {
 		if (!filename) {
 			throw new Error('Creating a repository requires a file name');
 		}
@@ -67,10 +68,10 @@ module.exports = class Repository {
 	async getOneBy(filters) {
 		const records = await this.getAll();
 
-		for (let record of records) {
+		for (const record of records) {
 			let found = true;
 
-			for (let key in filters) {
+			for (const key in filters) {
 				if (record[key] !== filters[key]) {
 					found = false;
 				}
@@ -81,4 +82,4 @@ module.exports = class Repository {
 			}
 		}
 	}
-}
+};

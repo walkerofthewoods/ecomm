@@ -3,8 +3,8 @@ const { getError } = require('../../helpers');
 
 //button below 'disabled' for live demo purposes
 module.exports = ({ errors }) => {
-  return layout({
-    content: `
+	return layout({
+		content: `
       <div class="columns is-centered">
         <div class="column is-half">
           <h1 class="subtitle">Create a Product</h1>
@@ -34,5 +34,5 @@ module.exports = ({ errors }) => {
         </div>
       </div>
     `
-  });
+	});
 };

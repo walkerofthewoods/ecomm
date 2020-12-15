@@ -31,10 +31,10 @@ module.exports = ({ content }, totalItems) => {
               </div>
               <div>
                 <ul class="social">
-                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-facebook"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-facebook-square"></i></a></li>
                   <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-twitter"></i></a></li>
-                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-linkedin"></i></a></li>
-                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-google-plus"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fas fa-thumbtack"></i></a></li>
+                  <li><a href="https://walkerofthewoods.github.io/"><i class="fab fa-instagram"></i></a></li>
                 </ul>
               </div>
             </div>
